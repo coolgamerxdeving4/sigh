@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggeria's Personal Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            animation: backgroundFade 10s infinite alternate;
+        }
+        @keyframes backgroundFade {
+            0% { background-color: #f4f4f4; }
+            50% { background-color: #e1f7d5; }
+            100% { background-color: #d0f0c0; }
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slideIn 2s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .main-image {
+            text-align: center;
+            margin: 20px;
+        }
+        .main-image img {
+            max-width: 200px;
+            border-radius: 50%;
+            animation: spin 5s infinite linear;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .content {
+            padding: 20px;
+            animation: fadeIn 3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .creations {
+            margin: 20px;
+        }
+        .creations h2 {
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .creations-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .creations-gallery img {
+            max-width: 150px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            animation: growShrink 4s infinite alternate;
+        }
+        @keyframes growShrink {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .discord {
+            text-align: center;
+            margin: 20px;
+            animation: slideUp 3s ease-in-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .discord a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s;
+        }
+        .discord a:hover {
+            color: #2E7D32;
+            transform: scale(1.2);
+        }
+        .content p {
+            animation: textGlow 3s infinite alternate;
+        }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px #4CAF50; }
+            to { text-shadow: 0 0 20px #4CAF50; }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector("header");
+            header.addEventListener("mouseover", () => {
+                header.style.backgroundColor = "#3E8E41";
+            });
+            header.addEventListener("mouseout", () => {
+                header.style.backgroundColor = "#4CAF50";
+            });
+
+            const galleryImages = document.querySelectorAll(".creations-gallery img");
+            galleryImages.forEach(img => {
+                img.addEventListener("click", () => {
+                    img.style.transform = "rotateY(360deg)";
+                    img.style.transition = "transform 1s";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Doggeria's Blog</h1>
+    </header>
+    <div class="main-image">
+        <img src="dogs/Doggeria.png" alt="Doggeria">
+    </div>
+    <div class="content">
+        <p>Hi, I'm Doggeria! I'm a passionate coder and designer who loves creating unique pixel art and other digital designs. Welcome to my personal blog where I showcase my work and share my thoughts on coding and design. Stay a while and explore!</p>
+    </div>
+    <div class="creations">
+        <h2>Some of My Creations</h2>
+        <div class="creations-gallery">
+            <img src="dogs/tree.png" alt="Pixel Art Tree">
+            <img src="dogs/Blue Crystal Eye.png" alt="Pixel Art Crystal Eye">
+            <img src="dogs/potion flower.png" alt="Pixel Art Potion Flower">
+        </div>
+    </div>
+    <div class="discord">
+        <p>Join my Discord server to connect with me and explore more of my work:</p>
+        <a href="https://discord.gg/Ut66ypV87z" target="_blank">Join My Discord Server</a>
+    </div>
+</body>
+</html>
